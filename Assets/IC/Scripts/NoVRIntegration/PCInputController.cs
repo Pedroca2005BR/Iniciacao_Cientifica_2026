@@ -11,7 +11,9 @@ namespace NoVRIntegration
 
         private CharacterController _charController;
         private Transform _camera;
-        
+        private InputAction _moveAction;
+        public InputActionAsset inputMap;
+
         public Vector3 movement {  get; private set; }
 
 
@@ -20,6 +22,8 @@ namespace NoVRIntegration
         {
             _camera = Camera.main.transform;
             _charController = GetComponent<CharacterController>();
+
+            _moveAction = InputSystem.actions.FindAction("Move");
         }
 
         private void FixedUpdate()
@@ -30,12 +34,22 @@ namespace NoVRIntegration
 
         void Move()
         {
-            movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            movement = _moveAction.ReadValue<Vector2>();
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, _camera.eulerAngles.y, transform.eulerAngles.z);
             //Debug.Log($"Euler Angles : {transform.eulerAngles} - movement : {movement}");
             movement = transform.TransformDirection(movement);
 
             _charController.Move(_moveSpeed * Time.deltaTime * movement);
+        }
+
+        private void OnEnable()
+        {
+            inputMap.FindActionMap("Player").Enable();
+        }
+
+        private void OnDisable()
+        {
+            inputMap.FindActionMap("Player").Disable();
         }
     }
 }
