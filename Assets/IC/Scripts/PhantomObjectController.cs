@@ -25,26 +25,34 @@ public class PhantomObjectController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.parent.TryGetComponent<IInteractable>(out IInteractable component))
+        try
         {
-            if (component.Type == type)
+            if (other.transform.parent.TryGetComponent<IInteractable>(out IInteractable component))
             {
-                TryChangeMaterial(1);
-                isOnRange = true;
+                if (component.Type == type)
+                {
+                    TryChangeMaterial(1);
+                    isOnRange = true;
+                }
             }
         }
+        catch { }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.parent.TryGetComponent<IInteractable>(out IInteractable component))
+        try
         {
-            if (component.Type == type)
+            if (other.transform.parent.TryGetComponent<IInteractable>(out IInteractable component))
             {
-                TryChangeMaterial(0);
-                isOnRange = false;
+                if (component.Type == type)
+                {
+                    TryChangeMaterial(0);
+                    isOnRange = false;
+                }
             }
         }
+        catch { }
     }
 
     public bool TryChangeMaterial(int index)

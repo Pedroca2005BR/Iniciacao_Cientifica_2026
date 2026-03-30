@@ -46,6 +46,6 @@ public static class ConnectorUtils
             counter--;
         }
 
-        Debug.Log("Joint sumiu: " + (objA.GetComponent<FixedJoint>() == null));
+        //Debug.Log("Joint sumiu: " + (objA.GetComponent<FixedJoint>() == null));
     }
 }

@@ -14,27 +14,27 @@ public class Vest_Controller : MonoBehaviour, IInteractable
 
     public void Deselect()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void Activate()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void Deactivate()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public GameObject GetObject()
     {
-        throw new System.NotImplementedException();
+        return gameObject;
     }
 
 
     void Equip()
     {
-        ConnectorUtils.AttachObjects(gameObject, XROrigin);
+        
     }
 }
