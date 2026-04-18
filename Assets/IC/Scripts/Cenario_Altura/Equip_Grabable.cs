@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Vest_Controller : MonoBehaviour, IInteractable
+public class Equip_Grabable : MonoBehaviour, IInteractable
 {
     public EPIType Type => type;
     EPIType type = EPIType.Colete;
@@ -35,6 +35,6 @@ public class Vest_Controller : MonoBehaviour, IInteractable
 
     void Equip()
     {
-        
+
     }
 }
