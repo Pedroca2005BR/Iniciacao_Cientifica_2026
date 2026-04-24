@@ -75,8 +75,32 @@ public class PhantomObjectController : MonoBehaviour
         ConnectorUtils.AttachObjects(obj, gameObject);
     }
 
-    
+    // For use in editor only
+    [ContextMenu("Snap")]
+    public void SnapClosest()
+    {
+        SphereCollider sphereCollider = GetComponent<SphereCollider>();
 
+        Collider[] colliders = Physics.OverlapSphere(transform.position, sphereCollider.radius);
+        Debug.Log($"Colisores encontrados em {sphereCollider.radius}: {colliders.Length}");
+        if (colliders.Length > 0)
+        {
+            foreach (Collider col in colliders)
+            {
+                Debug.Log($"Colisor encontrado: {col.name}");
+                if (col.transform.parent.TryGetComponent<IInteractable>(out IInteractable component))
+                {
+                    if (component.Type == type)
+                    {
+                        SnapToPosition(component.GetObject());
+                        Debug.Log($"Snap realizado => {ObjectConnected}");
+                        return;
+                    }
+                }
+            }
+        }
+    }
+    
 
     /// EVENT SYSTEM -------------------------------------------------------------------------------
 

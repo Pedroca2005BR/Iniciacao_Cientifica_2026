@@ -22,7 +22,7 @@ namespace Pedroca2005BR.EquipmentSystem
         }
         #endregion
 
-        List<EquipmentSlot> equipmentSlots = new List<EquipmentSlot>();
+        public List<EquipmentSlot> equipmentSlots = new List<EquipmentSlot>();
 
         public void EquipItem(Equipment item)
         {

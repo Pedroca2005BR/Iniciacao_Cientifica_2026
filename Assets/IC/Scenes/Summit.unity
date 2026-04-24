@@ -400,11 +400,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca64d778a8a671046a313663dd566f97, type: 3}
---- !u!1 &406572984 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
-  m_PrefabInstance: {fileID: 1599511767}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &406572990 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -561,6 +556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 722528020}
+  - component: {fileID: 722528021}
   m_Layer: 2
   m_Name: EquipmentPoints
   m_TagString: Untagged
@@ -582,7 +578,55 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1137958296}
+  - {fileID: 810685191}
   m_Father: {fileID: 406572990}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &722528021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722528019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f0550de4ddc3024c9a7810432784519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pedroca2005BR.EquipmentSystem.EquipmentManager
+  equipmentSlots:
+  - type: 2
+    offset: {fileID: 810685191}
+    currentEquipment: {fileID: 0}
+--- !u!1 &810685190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 810685191}
+  m_Layer: 2
+  m_Name: Chest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &810685191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810685190}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 722528020}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &859022898
 PrefabInstance:
@@ -1448,7 +1492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d99d5f9916e5db4282d6aa5f3d5c29d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Vest_Controller
-  XROrigin: {fileID: 406572984}
+  equipment: {fileID: 0}
 --- !u!1 &2012892904
 GameObject:
   m_ObjectHideFlags: 0
@@ -2059,7 +2103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d99d5f9916e5db4282d6aa5f3d5c29d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Vest_Controller
-  XROrigin: {fileID: 406572984}
+  equipment: {fileID: 8911730191344661753, guid: d53b4ddd623409743adb82894eb55baa, type: 3}
 --- !u!114 &8971450174836710717
 MonoBehaviour:
   m_ObjectHideFlags: 0

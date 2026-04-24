@@ -1,3 +1,4 @@
+using Pedroca2005BR.EquipmentSystem;
 using UnityEngine;
 
 public class Equip_Grabable : MonoBehaviour, IInteractable
@@ -5,11 +6,11 @@ public class Equip_Grabable : MonoBehaviour, IInteractable
     public EPIType Type => type;
     EPIType type = EPIType.Colete;
 
-    [SerializeField] GameObject XROrigin;
+    [SerializeField] Equipment equipment;
 
     public void Select()
     {
-        Equip();
+        
     }
 
     public void Deselect()
@@ -19,7 +20,7 @@ public class Equip_Grabable : MonoBehaviour, IInteractable
 
     public void Activate()
     {
-        
+        Equip();
     }
 
     public void Deactivate()
@@ -35,6 +36,6 @@ public class Equip_Grabable : MonoBehaviour, IInteractable
 
     void Equip()
     {
-
+        EquipmentManager.Instance.EquipItem(equipment);
     }
 }

@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Pedroca2005BR.EquipmentSystem
 {
+    [System.Serializable]
     public class EquipmentSlot
     {
         public EquipmentSlotType type;

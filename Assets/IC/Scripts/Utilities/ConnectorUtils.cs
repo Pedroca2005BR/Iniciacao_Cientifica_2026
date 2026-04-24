@@ -42,6 +42,8 @@ public static class ConnectorUtils
                 phantom.ObjectConnected = null;
             }
 
+            objA.transform.SetParent(null);
+
             GameObject.Destroy(joint);
             counter--;
         }
