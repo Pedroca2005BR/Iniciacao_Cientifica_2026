@@ -72,12 +72,10 @@ namespace Pedroca2005BR.EquipmentSystem
 
         private bool IsSlotOccupied(EquipmentSlotType slotType)
         {
-            foreach (var slot in equipmentSlots)
+            var slot = GetSlotByType(slotType);
+            if (slot != null)
             {
-                if (slot.type == slotType && slot.currentEquipment != null)
-                {
-                    return true;
-                }
+                return slot.currentEquipment != null;
             }
             return false;
         }

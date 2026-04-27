@@ -69,7 +69,7 @@ public class PhantomObjectController : MonoBehaviour
 
     private void SnapToPosition(GameObject obj)
     {
-        Debug.Log($"{obj.name}: Snap preparado!");
+        //Debug.Log($"{obj.name}: Snap preparado!");
         ObjectConnected = obj;
         rend.enabled = false;
         ConnectorUtils.AttachObjects(obj, gameObject);

@@ -29,7 +29,10 @@ public static class ConnectorUtils
         joint.anchor = Vector3.zero;
         joint.connectedAnchor = Vector3.zero;
 
-        
+        // TESTE: Resolvendo problema de garras sendo filhas do colete ----------------------------------------------------------------------
+        objA.transform.SetParent(null);
+        objA.transform.SetParent(objB.transform);
+        Debug.Log(objA.transform.parent.parent);
     }
 
     public static void DetachObject(GameObject objA)
@@ -43,6 +46,7 @@ public static class ConnectorUtils
             }
 
             objA.transform.SetParent(null);
+            Debug.Log(objA.transform.parent);
 
             GameObject.Destroy(joint);
             counter--;
