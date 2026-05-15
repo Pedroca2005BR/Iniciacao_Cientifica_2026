@@ -1196,11 +1196,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933ae96d5faaa984baa041eef30e1c53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRBody.IKTargetFollowVRRig
-  turnSmoothness: 1
+  turnSmoothness: 0.1
   head:
     vrTarget: {fileID: 1861860728}
-    ikTarget: {fileID: 589864657}
-    trackingPositionOffset: {x: 0, y: 0, z: 0}
+    ikTarget: {fileID: 489427363}
+    trackingPositionOffset: {x: 0, y: 0.33, z: 0}
     trackingRotationOffset: {x: 0, y: 0, z: 0}
   leftHand:
     vrTarget: {fileID: 76317844}
@@ -1212,7 +1212,8 @@ MonoBehaviour:
     ikTarget: {fileID: 2006815911}
     trackingPositionOffset: {x: 0, y: 0, z: 0}
     trackingRotationOffset: {x: 0, y: 0, z: 0}
-  headBodyYOffset: -0.66
+  headBodyPositionOffset: {x: 0.16, y: -0.63, z: 0}
+  headBodyYawOffset: 0
 --- !u!114 &733373896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1457,10 +1458,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1178791450436251564, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
-      propertyPath: m_CameraYOffset
-      value: 1.37
-      objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Name
       value: XR Origin (XR Rig)
@@ -1471,7 +1468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.424
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2054,7 +2051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9c6590f7e2f7a34698fe929e6771bc7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.138
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9c6590f7e2f7a34698fe929e6771bc7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2166,7 +2163,7 @@ Transform:
   m_GameObject: {fileID: 1861860727}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2198,7 +2195,7 @@ Transform:
   m_GameObject: {fileID: 1874188034}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.618, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

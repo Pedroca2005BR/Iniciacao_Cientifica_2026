@@ -24,13 +24,15 @@ namespace VRBody
         public VRMap leftHand;
         public VRMap rightHand;
 
-        public Vector3 headBodyPositionOffset;
-        public float headBodyYawOffset;
+        public float headBodyPositionOffsetY = -0.6f;
+        public float camDistanceFromHead = 0.5f;
+
+
 
         // Update is called once per frame
         void LateUpdate()
         {
-            transform.position = head.ikTarget.position + headBodyPositionOffset;
+            transform.localPosition = head.ikTarget.position + GetNewCamPosition();
             float yaw = head.vrTarget.eulerAngles.y;
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(transform.eulerAngles.x, yaw, transform.eulerAngles.z), turnSmoothness);
 
@@ -38,5 +40,17 @@ namespace VRBody
             leftHand.Map();
             rightHand.Map();
         }
+
+        Vector3 GetNewCamPosition()
+        {
+            float rad = head.vrTarget.eulerAngles.y * Mathf.Deg2Rad;
+            float x = Mathf.Sin(rad);
+            float z = Mathf.Cos(rad);
+            Vector3 pos = new Vector3(x, 0, z) * camDistanceFromHead;
+            pos.y = headBodyPositionOffsetY;
+            return pos;
+        }
+
+
     }
 }
