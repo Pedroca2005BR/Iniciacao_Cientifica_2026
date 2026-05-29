@@ -1,14 +1,24 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ExtinguisherTest : MonoBehaviour
+public class FireParticlesType : MonoBehaviour
 {
+    [System.Flags]
+    public enum FireType 
+    { 
+        A = 1,
+        B = 2,
+        C = 4
+    }
+
+    public FireType fireType;
 
     public FireExtinguisher fire;
     bool isActive = false;
     public float reduceFire = 0.1f;
 
-    public void LigarInsintor(InputAction.CallbackContext context)
+    public void SetExtinguisherOn(InputAction.CallbackContext context)
     {
         if(context.performed)
         {
