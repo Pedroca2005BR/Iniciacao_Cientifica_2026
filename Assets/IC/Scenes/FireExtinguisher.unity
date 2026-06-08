@@ -175,6 +175,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2015988267346868463, guid: f8e0f1b1ae9c4de4b88ae870ace76885, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1293454729}
     - targetCorrespondingSourceObject: {fileID: 600321987771345088, guid: f8e0f1b1ae9c4de4b88ae870ace76885, type: 3}
       insertIndex: -1
       addedObject: {fileID: 878255186}
@@ -477,6 +480,26 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &1293454724 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2015988267346868463, guid: f8e0f1b1ae9c4de4b88ae870ace76885, type: 3}
+  m_PrefabInstance: {fileID: 231664913}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1293454729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293454724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c04c31e80b7774d9d79cb66b63e3bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExtinguisherTest
+  fireType: 2
+  fire: {fileID: 1966350970}
+  reduceFire: 0.5
 --- !u!1001 &1942599080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -485,10 +508,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1404737647571363043, guid: 94a0ff763b602e045b8e9c24bb84099f, type: 3}
+      propertyPath: mixtureType
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5891020630256352477, guid: 94a0ff763b602e045b8e9c24bb84099f, type: 3}
+      propertyPath: fire
+      value: 
+      objectReference: {fileID: 1293454729}
     - target: {fileID: 5891020630256352477, guid: 94a0ff763b602e045b8e9c24bb84099f, type: 3}
       propertyPath: extTst
       value: 
-      objectReference: {fileID: 2123126767}
+      objectReference: {fileID: 1293454729}
+    - target: {fileID: 5891020630256352477, guid: 94a0ff763b602e045b8e9c24bb84099f, type: 3}
+      propertyPath: fireType
+      value: 
+      objectReference: {fileID: 1293454729}
     - target: {fileID: 8175867684741068581, guid: 94a0ff763b602e045b8e9c24bb84099f, type: 3}
       propertyPath: m_UseGravity
       value: 0
@@ -609,9 +644,9 @@ MonoBehaviour:
     m_ActionName: 'Player/Crouch[/Keyboard/c]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2123126767}
+      - m_Target: {fileID: 1293454729}
         m_TargetAssemblyTypeName: ExtinguisherTest, Assembly-CSharp
-        m_MethodName: LigarInsintor
+        m_MethodName: SetExtinguisherOn
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -691,52 +726,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5e2015ae2df314cb9714303ad98515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2123126766
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2123126768}
-  - component: {fileID: 2123126767}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2123126767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123126766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48c04c31e80b7774d9d79cb66b63e3bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ExtinguisherTest
-  fire: {fileID: 1966350970}
-  reduceFire: 0.1
---- !u!4 &2123126768
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123126766}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23566674, y: 0, z: 0.58069}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -744,5 +733,4 @@ SceneRoots:
   - {fileID: 1190728726}
   - {fileID: 563262119}
   - {fileID: 231664913}
-  - {fileID: 2123126768}
   - {fileID: 1942599080}
