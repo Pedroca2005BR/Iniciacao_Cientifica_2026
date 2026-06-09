@@ -9,7 +9,7 @@ public class FireExtinguisher : MonoBehaviour, IInteractable
 
     [Header("Extinguisher info")]
     [SerializeField] private ExtinguisherMixture mixtureController;
-    public ExtinguisherMixture.MixtureType mixtureType;
+    //public ExtinguisherMixture.MixtureType mixtureType;
 
     public EPIType Type { get => type; }
 
@@ -29,7 +29,7 @@ public class FireExtinguisher : MonoBehaviour, IInteractable
 
     public void Activate()
     {
-        mixtureController.PlayMixture(mixtureType);
+        mixtureController.PlayMixture();
     }
 
     public void Deactivate()

@@ -17,4 +17,9 @@ public class ChangeToDemoScene : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void RestartSecene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

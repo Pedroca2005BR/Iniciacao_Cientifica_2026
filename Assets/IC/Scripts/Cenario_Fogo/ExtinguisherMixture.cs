@@ -12,9 +12,10 @@ public class ExtinguisherMixture : MonoBehaviour
 
     public MixtureType type;
     [SerializeField] private ParticleSystem mixtureParticle;
+    public float rateOfExtinguishing = 0.1f;
 
 
-    public FireParticlesType fire;
+    FireParticlesType fire;
 
     private void Start()
     {
@@ -24,9 +25,8 @@ public class ExtinguisherMixture : MonoBehaviour
         }
     }
 
-    public void PlayMixture(MixtureType type)
+    public void PlayMixture()
     {
-        this.type = type;
         mixtureParticle.Play();
     }
     
@@ -55,10 +55,12 @@ public class ExtinguisherMixture : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         var emission = other.GetComponent<ParticleSystem>().emission;
+        fire = other.GetComponent<FireParticlesType>();
         float em = emission.rateOverTime.constant;
+
         if (other.CompareTag("Fire") && FireTypeTrue())
         {
-            em -= fire.reduceFire;
+            em -= rateOfExtinguishing;
             Debug.Log(em);
             emission.rateOverTime = em;
             if(emission.rateOverTime.constant == 0f)
@@ -68,4 +70,5 @@ public class ExtinguisherMixture : MonoBehaviour
             //other.GetComponent<ParticleSystem>().Stop();
         }
     }
+
 }

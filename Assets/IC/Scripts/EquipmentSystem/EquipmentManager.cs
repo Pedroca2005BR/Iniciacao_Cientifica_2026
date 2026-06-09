@@ -41,9 +41,10 @@ namespace Pedroca2005BR.EquipmentSystem
             var slot = GetSlotByType(item.equipmentSlotType);
             
             GameObject itemObject = Instantiate(item.gameObject, slot.offset.position, slot.offset.rotation, slot.offset);
-            
 
-            itemObject.GetComponent<Equipment>().OnEquip();
+            Equipment equipment = itemObject.GetComponent<Equipment>();
+            equipment.OnEquip();
+            slot.currentEquipment = equipment;
             
 
 

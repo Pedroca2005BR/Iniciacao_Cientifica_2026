@@ -499,7 +499,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ExtinguisherTest
   fireType: 2
   fire: {fileID: 1966350970}
-  reduceFire: 0.5
 --- !u!1001 &1942599080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -644,10 +643,10 @@ MonoBehaviour:
     m_ActionName: 'Player/Crouch[/Keyboard/c]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1293454729}
-        m_TargetAssemblyTypeName: ExtinguisherTest, Assembly-CSharp
-        m_MethodName: SetExtinguisherOn
-        m_Mode: 0
+      - m_Target: {fileID: 1966350970}
+        m_TargetAssemblyTypeName: FireExtinguisher, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
