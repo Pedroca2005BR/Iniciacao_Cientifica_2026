@@ -8,8 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Samples/XR Hands/1.8.0/Hand Capture/HandCapture.unity
+    guid: 1ebe1fe45ff8e46c9ac6fdd6bfd9ec73
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 95471c6a5481c51488c7ded4583ea4ef, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 8b7c93718c253c84cb628499513a0fb9, type: 2}
-  m_UseUCBPForAssetBundles: 0
