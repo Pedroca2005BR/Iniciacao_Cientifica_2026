@@ -13,8 +13,6 @@ public class FireExtinguisher : MonoBehaviour, IInteractable
 
     public EPIType Type { get => type; }
 
-    
-
     public void Select()
     {
         ConnectorUtils.DetachObject(gameObject);

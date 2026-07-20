@@ -10,11 +10,11 @@ public class ExtinguisherMixture : MonoBehaviour
         C = 4
     }
 
-    public MixtureType type;
+    public MixtureType mixType;
     [SerializeField] private ParticleSystem mixtureParticle;
+    [SerializeField] private float reduceFire = 0.1f;
 
-
-    public FireParticlesType fire;
+    private FireParticlesType fire;
 
     private void Start()
     {
@@ -26,7 +26,7 @@ public class ExtinguisherMixture : MonoBehaviour
 
     public void PlayMixture(MixtureType type)
     {
-        this.type = type;
+        this.mixType = type;
         mixtureParticle.Play();
     }
     
@@ -39,15 +39,15 @@ public class ExtinguisherMixture : MonoBehaviour
     {
         if((fire.fireType & FireParticlesType.FireType.A) != 0)
         {
-            if ((type & MixtureType.A) != 0) return true;
+            if ((mixType & MixtureType.A) != 0) return true;
         }
         else if ((fire.fireType & FireParticlesType.FireType.B) != 0)
         {
-            if ((type & MixtureType.B) != 0) return true;
+            if ((mixType & MixtureType.B) != 0) return true;
         }
         else if ((fire.fireType & FireParticlesType.FireType.C) != 0)
         {
-            if ((type & MixtureType.C) != 0) return true;
+            if ((mixType & MixtureType.C) != 0) return true;
         }
         return false;
     }
@@ -56,16 +56,18 @@ public class ExtinguisherMixture : MonoBehaviour
     {
         var emission = other.GetComponent<ParticleSystem>().emission;
         float em = emission.rateOverTime.constant;
+        fire = other.GetComponent<FireParticlesType>();
         if (other.CompareTag("Fire") && FireTypeTrue())
         {
-            em -= fire.reduceFire;
+            em -= reduceFire;
             Debug.Log(em);
             emission.rateOverTime = em;
             if(emission.rateOverTime.constant == 0f)
             {
                 emission.SetBurst(0, new ParticleSystem.Burst(0.0f, 0));
+                fire.ActivateSmoke();
             }
-            //other.GetComponent<ParticleSystem>().Stop();
+            
         }
     }
 }

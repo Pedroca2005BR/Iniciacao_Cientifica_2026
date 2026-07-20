@@ -14,24 +14,16 @@ public class FireParticlesType : MonoBehaviour
 
     public FireType fireType;
 
-    public FireExtinguisher fire;
-    bool isActive = false;
-    public float reduceFire = 0.1f;
+    public GameObject smokeParticle;
 
-    public void SetExtinguisherOn(InputAction.CallbackContext context)
+    private void Awake()
     {
-        if(context.performed)
-        {
-            if (isActive)
-            {
-                fire.Deactivate();
-                isActive = false;
-            }
-            else
-            {
-                fire.Activate();
-                isActive = true;
-            }
-        }
+        smokeParticle = transform.Find("SmokeParticleSystem").gameObject;
     }
+
+    public void ActivateSmoke()
+    {
+        smokeParticle.gameObject.SetActive(true);
+    }
+
 }
