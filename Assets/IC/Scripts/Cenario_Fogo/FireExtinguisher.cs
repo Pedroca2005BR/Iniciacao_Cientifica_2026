@@ -27,7 +27,8 @@ public class FireExtinguisher : MonoBehaviour, IInteractable
 
     public void Activate()
     {
-        mixtureController.PlayMixture();
+        throw new NotImplementedException();
+        //mixtureController.PlayMixture();
     }
 
     public void Deactivate()

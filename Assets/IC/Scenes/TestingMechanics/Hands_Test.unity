@@ -265,11 +265,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8a40287643a1cc947b6ed33cc000e531, type: 2}
   - {fileID: 11400000, guid: 4b12d200a5ce6af40a31c79021e8c869, type: 2}
   - {fileID: 11400000, guid: e49919bc93480674795a9c5cf863e1d0, type: 2}
-  confidenceThreshold: 0.925
-  checkInterval: 0.1
+  confidenceThreshold: 0.9
+  checkInterval: 0
   m_TeleportInteractor: {fileID: 124526330}
   teleportProvider: {fileID: 1220045488}
-  handGestureName: Gun
+  startTeleportGesture: Gun
   cancelGestureName: Scissors
   confirmGestureName: Point
 --- !u!114 &219117169
@@ -1323,7 +1323,7 @@ MonoBehaviour:
   checkInterval: 0.1
   m_TeleportInteractor: {fileID: 0}
   teleportProvider: {fileID: 0}
-  handGestureName: TeleportGesture
+  startTeleportGesture: 
   cancelGestureName: CancelTeleportGesture
   confirmGestureName: 
 --- !u!114 &1820466880

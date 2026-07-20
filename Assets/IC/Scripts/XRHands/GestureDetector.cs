@@ -1,4 +1,5 @@
 using Oculus.Interaction.Locomotion;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Hands;
@@ -52,26 +53,35 @@ namespace IC.XRHands
                 }
                 if (completenessScore >= confidenceThreshold)
                 {
-                    Debug.Log($"Detected gesture: {handShape.name} | Confidence: {completenessScore}");
+                    var indexShapes = handShape.fingerShapeConditions.Find(condition => condition.fingerID == XRHandFingerID.Index).targets;
+                    float indexCurl = 0.5f;
+
+                    for (int i = 0; i < indexShapes.Length; i++)
+                    {
+                        if (indexShapes[i].shapeType == XRFingerShapeType.FullCurl)
+                        {
+                            indexCurl = indexShapes[i].desired;
+                        }
+                    }
+
+
+                    //Debug.Log($"Detected gesture: {handShape.name} | Confidence: {completenessScore} | Index Curl: {indexCurl}");
                     // You can trigger events or actions based on the detected gesture here
 
 
-                    if (handShape.name == handGestureName)
+
+                    if (handShape.name == startTeleportGesture && indexCurl < 0.3f)
                     {
-                        Debug.Log("Teleport gesture detected. Initiating teleportation sequence.");
+                        //Debug.Log("Teleport gesture detected. Initiating teleportation sequence.");
                         OnStartTeleport();
                     }
-                    else if (handShape.name == confirmGestureName)
+                    else if (handShape.name == confirmGestureName && !_isTeleporting && _isRayActive)
                     {
-                        if (!_isTeleporting)
-                        {
-                            Debug.Log("Confirm teleport gesture detected. Confirming teleportation.");
-                            ConfirmTeleport();
-                        }
+                        ConfirmTeleport();
                     }
-                    else if (handShape.name == cancelGestureName)
+                    else
                     {
-                        Debug.Log("Cancel teleport gesture detected. Cancelling teleportation sequence.");
+                        //Debug.Log("Cancel teleport gesture detected. Cancelling teleportation sequence.");
                         OnCancelTeleport();
                     }
 
@@ -93,7 +103,7 @@ namespace IC.XRHands
         [Header("Teleport Test")]
         [SerializeField] XRRayInteractor m_TeleportInteractor;
         [SerializeField] TeleportationProvider teleportProvider;
-        [SerializeField] string handGestureName; // Name of the hand gesture to trigger teleportation
+        [SerializeField] string startTeleportGesture; // Name of the hand gesture to trigger teleportation
         [SerializeField] string cancelGestureName; // Name of the hand gesture to cancel teleportation
         [SerializeField] string confirmGestureName; // Name of the hand gesture to confirm teleportation
         private bool m_PostponedDeactivateTeleport;
@@ -157,8 +167,12 @@ namespace IC.XRHands
 
         public void ConfirmTeleport()
         {
+            //Debug.Log(Environment.StackTrace);
+
             if (m_TeleportInteractor.TryGetCurrent3DRaycastHit(out var hit) && !_isTeleporting)
             {
+                //Debug.Log("Say Cheese!");
+
                 _isTeleporting = true;
                 TeleportRequest request = new TeleportRequest
                 {
