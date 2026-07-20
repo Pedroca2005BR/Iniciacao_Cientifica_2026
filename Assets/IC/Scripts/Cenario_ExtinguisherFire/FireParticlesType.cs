@@ -13,4 +13,17 @@ public class FireParticlesType : MonoBehaviour
     }
 
     public FireType fireType;
+
+    public GameObject smokeParticle;
+
+    private void Awake()
+    {
+        smokeParticle = transform.Find("SmokeParticleSystem").gameObject;
+    }
+
+    public void ActivateSmoke()
+    {
+        smokeParticle.gameObject.SetActive(true);
+    }
+
 }
