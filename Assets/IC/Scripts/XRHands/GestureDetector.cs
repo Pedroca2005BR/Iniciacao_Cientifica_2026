@@ -22,6 +22,7 @@ namespace IC.XRHands
         [SerializeField] float confidenceThreshold = 0.9f;
         [SerializeField] float checkInterval = 0.1f;
 
+        private float[] fullCurls = new float[5];
         private float _lastCheckTime;
 
         #region Event Subscriptions
@@ -43,6 +44,18 @@ namespace IC.XRHands
         {
             if (Time.time - _lastCheckTime < checkInterval) return;
 
+            // For each finger, find the desired curl value for FullCurl and store it in the fullCurls array
+            for (int j = 0; j < 5; j++)
+            {
+                if (args.hand.CalculateFingerShape((XRHandFingerID)j, XRFingerShapeTypes.FullCurl).TryGetFullCurl(out float curl))
+                {
+                    fullCurls[j] = curl;
+                }
+
+                //Debug.Log($"Finger: {(XRHandFingerID)j} | Full Curl: {fullCurls[j]}");
+            }
+
+
 
             foreach (var handShape in handShapes)
             {
@@ -53,40 +66,35 @@ namespace IC.XRHands
                 }
                 if (completenessScore >= confidenceThreshold)
                 {
-                    var indexShapes = handShape.fingerShapeConditions.Find(condition => condition.fingerID == XRHandFingerID.Index).targets;
-                    float indexCurl = 0.5f;
-
-                    for (int i = 0; i < indexShapes.Length; i++)
-                    {
-                        if (indexShapes[i].shapeType == XRFingerShapeType.FullCurl)
-                        {
-                            indexCurl = indexShapes[i].desired;
-                        }
-                    }
+                    
+                    
 
 
-                    //Debug.Log($"Detected gesture: {handShape.name} | Confidence: {completenessScore} | Index Curl: {indexCurl}");
+                    Debug.Log($"Detected gesture: {handShape.name} | Confidence: {completenessScore} | Full Curls: {string.Join(", ", fullCurls)}");
                     // You can trigger events or actions based on the detected gesture here
 
 
 
-                    if (handShape.name == startTeleportGesture && indexCurl < 0.3f)
+                    if (handShape.name == startTeleportGesture && fullCurls[1] < 0.3f)
                     {
                         //Debug.Log("Teleport gesture detected. Initiating teleportation sequence.");
                         OnStartTeleport();
+                        break;
                     }
                     else if (handShape.name == confirmGestureName && !_isTeleporting && _isRayActive)
                     {
                         ConfirmTeleport();
+                        break;
                     }
                     else
                     {
                         //Debug.Log("Cancel teleport gesture detected. Cancelling teleportation sequence.");
                         OnCancelTeleport();
+                        break;
                     }
 
                     // At the end of the events, break the loop to avoid multiple gestures being detected in the same frame
-                    break;
+                    
                 }
             }
 
