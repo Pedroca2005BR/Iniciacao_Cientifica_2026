@@ -1,12 +1,15 @@
 using Oculus.Interaction.Locomotion;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Hands;
 using UnityEngine.XR.Hands.Gestures;
 using UnityEngine.XR.Hands.Samples.GestureSample;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation;
+using UnityEngine.XR.Interaction.Toolkit.Samples.Hands;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 namespace IC.XRHands
@@ -86,14 +89,20 @@ namespace IC.XRHands
                         ConfirmTeleport();
                         break;
                     }
+                    else if (handShape.name == selectGestureName)
+                    {
+                        Select();
+                        break;
+                    }
                     else
                     {
                         //Debug.Log("Cancel teleport gesture detected. Cancelling teleportation sequence.");
-                        OnCancelTeleport();
+                        if (_isRayActive)
+                            OnCancelTeleport();
+                        if (_isSelecting)
+                            Deselect();
                         break;
                     }
-
-                    // At the end of the events, break the loop to avoid multiple gestures being detected in the same frame
                     
                 }
             }
@@ -102,7 +111,7 @@ namespace IC.XRHands
         }
 
 
-
+        #region teleport
 
 
 
@@ -169,6 +178,18 @@ namespace IC.XRHands
                 _isRayActive = false;
             }
 
+            // Tenta pegar o primeiro objeto selecionável
+            if (_isSelecting && !_isHolding)
+            {
+                var validTargets = new List<IXRInteractable>();
+                nearFarInteractor.GetValidTargets(validTargets);
+
+                if (validTargets.Count > 0)
+                {
+                    _releaseThresholdButtonReader.valueInput.QueueManualState(true, 1f);
+                    _isHolding = true;
+                }
+            }
         }
 
         
@@ -192,6 +213,32 @@ namespace IC.XRHands
 
                 // Cancels the teleportation sequence after confirming the teleportation.
                 OnCancelTeleport();
+            }
+        }
+
+        #endregion
+
+        [SerializeField] ReleaseThresholdButtonReader _releaseThresholdButtonReader;
+        [SerializeField] NearFarInteractor nearFarInteractor;
+        [SerializeField] string selectGestureName; // Name of the hand gesture to trigger selection
+        bool _isSelecting = false;
+        bool _isHolding = false;
+
+        void Select()
+        {
+            if (_releaseThresholdButtonReader != null && !_isSelecting)
+            {
+                Debug.Log("Select gesture detected. Triggering selection.");
+                _isSelecting = true;
+            }
+        }
+        void Deselect()
+        {
+            if (_releaseThresholdButtonReader != null)
+            {
+                _isSelecting = false;
+                _isHolding = false;
+                _releaseThresholdButtonReader.valueInput.QueueManualState(false, 0f);
             }
         }
     }
