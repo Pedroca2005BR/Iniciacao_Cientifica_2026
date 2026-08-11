@@ -1,11 +1,15 @@
 using Oculus.Interaction.Locomotion;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Hands;
 using UnityEngine.XR.Hands.Gestures;
 using UnityEngine.XR.Hands.Samples.GestureSample;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation;
+using UnityEngine.XR.Interaction.Toolkit.Samples.Hands;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 namespace IC.XRHands
@@ -21,6 +25,7 @@ namespace IC.XRHands
         [SerializeField] float confidenceThreshold = 0.9f;
         [SerializeField] float checkInterval = 0.1f;
 
+        private float[] fullCurls = new float[5];
         private float _lastCheckTime;
 
         #region Event Subscriptions
@@ -42,6 +47,18 @@ namespace IC.XRHands
         {
             if (Time.time - _lastCheckTime < checkInterval) return;
 
+            // For each finger, find the desired curl value for FullCurl and store it in the fullCurls array
+            for (int j = 0; j < 5; j++)
+            {
+                if (args.hand.CalculateFingerShape((XRHandFingerID)j, XRFingerShapeTypes.FullCurl).TryGetFullCurl(out float curl))
+                {
+                    fullCurls[j] = curl;
+                }
+
+                //Debug.Log($"Finger: {(XRHandFingerID)j} | Full Curl: {fullCurls[j]}");
+            }
+
+
 
             foreach (var handShape in handShapes)
             {
@@ -52,31 +69,41 @@ namespace IC.XRHands
                 }
                 if (completenessScore >= confidenceThreshold)
                 {
-                    Debug.Log($"Detected gesture: {handShape.name} | Confidence: {completenessScore}");
+                    
+                    
+
+
+                    Debug.Log($"Detected gesture: {handShape.name} | Confidence: {completenessScore} | Full Curls: {string.Join(", ", fullCurls)}");
                     // You can trigger events or actions based on the detected gesture here
 
 
-                    if (handShape.name == handGestureName)
-                    {
-                        Debug.Log("Teleport gesture detected. Initiating teleportation sequence.");
-                        OnStartTeleport();
-                    }
-                    else if (handShape.name == confirmGestureName)
-                    {
-                        if (!_isTeleporting)
-                        {
-                            Debug.Log("Confirm teleport gesture detected. Confirming teleportation.");
-                            ConfirmTeleport();
-                        }
-                    }
-                    else if (handShape.name == cancelGestureName)
-                    {
-                        Debug.Log("Cancel teleport gesture detected. Cancelling teleportation sequence.");
-                        OnCancelTeleport();
-                    }
 
-                    // At the end of the events, break the loop to avoid multiple gestures being detected in the same frame
-                    break;
+                    if (handShape.name == startTeleportGesture && fullCurls[1] < 0.3f)
+                    {
+                        //Debug.Log("Teleport gesture detected. Initiating teleportation sequence.");
+                        OnStartTeleport();
+                        break;
+                    }
+                    else if (handShape.name == confirmGestureName && !_isTeleporting && _isRayActive)
+                    {
+                        ConfirmTeleport();
+                        break;
+                    }
+                    else if (handShape.name == selectGestureName)
+                    {
+                        Select();
+                        break;
+                    }
+                    else
+                    {
+                        //Debug.Log("Cancel teleport gesture detected. Cancelling teleportation sequence.");
+                        if (_isRayActive)
+                            OnCancelTeleport();
+                        if (_isSelecting)
+                            Deselect();
+                        break;
+                    }
+                    
                 }
             }
 
@@ -84,7 +111,7 @@ namespace IC.XRHands
         }
 
 
-
+        #region teleport
 
 
 
@@ -93,7 +120,7 @@ namespace IC.XRHands
         [Header("Teleport Test")]
         [SerializeField] XRRayInteractor m_TeleportInteractor;
         [SerializeField] TeleportationProvider teleportProvider;
-        [SerializeField] string handGestureName; // Name of the hand gesture to trigger teleportation
+        [SerializeField] string startTeleportGesture; // Name of the hand gesture to trigger teleportation
         [SerializeField] string cancelGestureName; // Name of the hand gesture to cancel teleportation
         [SerializeField] string confirmGestureName; // Name of the hand gesture to confirm teleportation
         private bool m_PostponedDeactivateTeleport;
@@ -151,14 +178,30 @@ namespace IC.XRHands
                 _isRayActive = false;
             }
 
+            // Tenta pegar o primeiro objeto selecionável
+            if (_isSelecting && !_isHolding)
+            {
+                var validTargets = new List<IXRInteractable>();
+                nearFarInteractor.GetValidTargets(validTargets);
+
+                if (validTargets.Count > 0)
+                {
+                    _releaseThresholdButtonReader.valueInput.QueueManualState(true, 1f);
+                    _isHolding = true;
+                }
+            }
         }
 
         
 
         public void ConfirmTeleport()
         {
+            //Debug.Log(Environment.StackTrace);
+
             if (m_TeleportInteractor.TryGetCurrent3DRaycastHit(out var hit) && !_isTeleporting)
             {
+                //Debug.Log("Say Cheese!");
+
                 _isTeleporting = true;
                 TeleportRequest request = new TeleportRequest
                 {
@@ -170,6 +213,32 @@ namespace IC.XRHands
 
                 // Cancels the teleportation sequence after confirming the teleportation.
                 OnCancelTeleport();
+            }
+        }
+
+        #endregion
+
+        [SerializeField] ReleaseThresholdButtonReader _releaseThresholdButtonReader;
+        [SerializeField] NearFarInteractor nearFarInteractor;
+        [SerializeField] string selectGestureName; // Name of the hand gesture to trigger selection
+        bool _isSelecting = false;
+        bool _isHolding = false;
+
+        void Select()
+        {
+            if (_releaseThresholdButtonReader != null && !_isSelecting)
+            {
+                Debug.Log("Select gesture detected. Triggering selection.");
+                _isSelecting = true;
+            }
+        }
+        void Deselect()
+        {
+            if (_releaseThresholdButtonReader != null)
+            {
+                _isSelecting = false;
+                _isHolding = false;
+                _releaseThresholdButtonReader.valueInput.QueueManualState(false, 0f);
             }
         }
     }
