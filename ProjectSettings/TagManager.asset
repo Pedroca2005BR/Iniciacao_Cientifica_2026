@@ -59,7 +59,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Walkable
   - 
   m_SortingLayers:
   - name: Default
