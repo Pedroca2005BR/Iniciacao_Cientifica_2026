@@ -1,15 +1,16 @@
+using Oculus.Interaction.HandGrab;
 using Pedroca2005BR.Utilities;
 using System;
 using UnityEngine;
 
-public class FireExtinguisher : MonoBehaviour, IInteractable
+public class FireExtinguisher : MonoBehaviour, IInteractable, IHandGrabUseDelegate
 {
     [Header("EPI info")]
     public EPIType type;
 
     [Header("Extinguisher info")]
     [SerializeField] private ExtinguisherMixture mixtureController;
-    //public ExtinguisherMixture.MixtureType mixtureType;
+    public ExtinguisherMixture.MixtureType mixtureType;
 
     public EPIType Type { get => type; }
 
@@ -27,8 +28,7 @@ public class FireExtinguisher : MonoBehaviour, IInteractable
 
     public void Activate()
     {
-        throw new NotImplementedException();
-        //mixtureController.PlayMixture();
+        mixtureController.PlayMixture(mixtureType);
     }
 
     public void Deactivate()
@@ -39,5 +39,24 @@ public class FireExtinguisher : MonoBehaviour, IInteractable
     public GameObject GetObject()
     {
         return gameObject;
+    }
+
+
+
+
+    public void BeginUse()
+    {
+        Debug.Log("YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYYYYYYYYYY");
+        Activate();
+    }
+
+    public void EndUse()
+    {
+        Deactivate();
+    }
+
+    public float ComputeUseStrength(float strength)
+    {
+        return strength;
     }
 }
