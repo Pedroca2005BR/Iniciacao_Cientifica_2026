@@ -7,7 +7,7 @@ public class RopeGenerator : MonoBehaviour
     [Header("Rope")]
     public GameObject prefab;
     public int segments = 20;
-    public float spacing = 0.25f;
+    public float spacing;
 
     [Header("Appearance")]
     public Material lineMaterial;
@@ -21,7 +21,6 @@ public class RopeGenerator : MonoBehaviour
     public bool useProjection = true;
     public float projectionDistance = 0.01f;
     public float projectionAngle = 1f;
-
 
     [ContextMenu("Generate Rope")]
     public void GenerateRope()
