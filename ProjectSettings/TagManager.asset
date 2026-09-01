@@ -6,6 +6,28 @@ TagManager:
   tags:
   - PhantomClaw
   - Fire
+  - QDSUIPrimaryButton
+  - QDSUITextSecondaryInvertedColor
+  - QDSUIAccentColor
+  - QDSUITextInvertedColor
+  - QDSUISecondaryButton
+  - QDSUIIcon
+  - QDSUIDestructiveButton
+  - QDSUISharedThemeColor
+  - QDSUIBorderlessButton
+  - QDSUIToggleBorderlessButton
+  - QDSUITextSecondaryColor
+  - QDSUIBackplateGradient
+  - QDSUITooltip
+  - QDSUIToggleButton
+  - QDSUIBackplate
+  - QDSUISection
+  - QDSUILineDrawing
+  - QDSUITextInputField
+  - QDSUIToggleSwitch
+  - QDSUIToggleCheckboxRadio
+  - QDSUIToggleThumbnail
+  - SamplesInfoPanel
   layers:
   - Default
   - TransparentFX
@@ -37,7 +59,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Walkable
   - 
   m_SortingLayers:
   - name: Default

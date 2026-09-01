@@ -1,6 +1,7 @@
 using Oculus.Interaction.Locomotion;
 using System;
 using System.Collections.Generic;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Hands;
@@ -8,6 +9,7 @@ using UnityEngine.XR.Hands.Gestures;
 using UnityEngine.XR.Hands.Samples.GestureSample;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Climbing;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation;
 using UnityEngine.XR.Interaction.Toolkit.Samples.Hands;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
@@ -73,7 +75,7 @@ namespace IC.XRHands
                     
 
 
-                    Debug.Log($"Detected gesture: {handShape.name} | Confidence: {completenessScore} | Full Curls: {string.Join(", ", fullCurls)}");
+                    //Debug.Log($"Detected gesture: {handShape.name} | Confidence: {completenessScore} | Full Curls: {string.Join(", ", fullCurls)}");
                     // You can trigger events or actions based on the detected gesture here
 
 
@@ -190,6 +192,20 @@ namespace IC.XRHands
                     _isHolding = true;
                 }
             }
+
+            // Teste de Climb
+            //var interactor = climbProvider.climbAnchorInteractor;
+
+            //if (interactor == null)
+            //    return;
+
+            //var attach = interactor.GetAttachTransform(climbInteractable);
+
+            ////Debug.Log(
+            ////    $"Attach: {attach.position}" +
+            ////    $"Locomotion State: {climbProvider.locomotionState}" +
+            ////    $"XR Origin Position: {xrOrigin.transform.position}"
+            ////);
         }
 
         
@@ -241,5 +257,11 @@ namespace IC.XRHands
                 _releaseThresholdButtonReader.valueInput.QueueManualState(false, 0f);
             }
         }
+
+
+        [Header("Climb Test")]
+        [SerializeField] ClimbProvider climbProvider;
+        [SerializeField] ClimbInteractable climbInteractable;
+        [SerializeField] XROrigin xrOrigin;
     }
 }
