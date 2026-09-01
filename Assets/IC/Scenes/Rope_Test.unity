@@ -119,6 +119,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!54 &117631221 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1107961467025717008, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+  m_PrefabInstance: {fileID: 966985246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &119776114 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8740864844201502614, guid: 4ea711befd549324095e934d72d6aa65, type: 3}
+  m_PrefabInstance: {fileID: 5439900692548003002}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &349954946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 478060141732796392, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
@@ -251,15 +261,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4735738859137767919, guid: a6e4613793219a04ea7d3e41fefbe9ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.431859
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4735738859137767919, guid: a6e4613793219a04ea7d3e41fefbe9ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4735738859137767919, guid: a6e4613793219a04ea7d3e41fefbe9ec, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.526435
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4735738859137767919, guid: a6e4613793219a04ea7d3e41fefbe9ec, type: 3}
       propertyPath: m_LocalRotation.w
@@ -289,13 +299,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5026096114085501909, guid: a6e4613793219a04ea7d3e41fefbe9ec, type: 3}
-      propertyPath: lineMaterial
-      value: 
-      objectReference: {fileID: 8003097809021183101, guid: f86e16facf9a6b2448aacd9129f8eb52, type: 3}
     - target: {fileID: 7373378041776086819, guid: a6e4613793219a04ea7d3e41fefbe9ec, type: 3}
       propertyPath: m_Name
       value: RopeGenerator
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373378041776086819, guid: a6e4613793219a04ea7d3e41fefbe9ec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -350,27 +360,924 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 488764704517319705, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_XMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 488764704517319705, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_YMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 488764704517319705, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ZMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 488764704517319705, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_MassScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 488764704517319705, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488764704517319705, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 488764704517319705, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 488764704517319705, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 488764704517319705, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.contactDistance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 525633879317700355, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_XMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 525633879317700355, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_YMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 525633879317700355, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ZMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 525633879317700355, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_MassScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 525633879317700355, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 525633879317700355, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 525633879317700355, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 525633879317700355, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 525633879317700355, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.contactDistance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 556702152302427993, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 772348558603992789, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_XMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 772348558603992789, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_YMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 772348558603992789, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ZMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 772348558603992789, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_MassScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 772348558603992789, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 772348558603992789, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 772348558603992789, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 772348558603992789, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 772348558603992789, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.contactDistance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107961467025717008, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749143953209057318, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1812919048515908817, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2445045231324275212, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604681535480401475, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_XMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604681535480401475, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_YMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604681535480401475, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ZMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604681535480401475, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_MassScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604681535480401475, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604681535480401475, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604681535480401475, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604681535480401475, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604681535480401475, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.contactDistance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243975590476659540, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_XMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243975590476659540, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_YMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243975590476659540, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ZMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243975590476659540, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_MassScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243975590476659540, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243975590476659540, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243975590476659540, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243975590476659540, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243975590476659540, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.contactDistance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298948906389443796, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_XMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298948906389443796, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_YMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298948906389443796, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ZMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298948906389443796, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_MassScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298948906389443796, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298948906389443796, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298948906389443796, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298948906389443796, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298948906389443796, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.contactDistance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361182370174250564, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393203285846737647, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843438983208996067, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_XMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843438983208996067, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_YMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843438983208996067, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ZMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843438983208996067, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_MassScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843438983208996067, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843438983208996067, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843438983208996067, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843438983208996067, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843438983208996067, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.contactDistance
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 3890265820049077686, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
       propertyPath: m_Name
       value: Rope
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260323691208809954, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479761118921637619, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495802285686022279, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_XMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495802285686022279, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_YMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495802285686022279, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ZMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495802285686022279, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_MassScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495802285686022279, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495802285686022279, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495802285686022279, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495802285686022279, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495802285686022279, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.contactDistance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649293361764223863, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5153451583795886645, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5301455397936180552, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5864875985463670065, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_XMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5864875985463670065, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_YMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5864875985463670065, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ZMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5864875985463670065, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_MassScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5864875985463670065, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5864875985463670065, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5864875985463670065, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5864875985463670065, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5864875985463670065, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.contactDistance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191949501089620146, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447365914147508888, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_XMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447365914147508888, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_YMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447365914147508888, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ZMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447365914147508888, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_MassScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447365914147508888, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447365914147508888, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447365914147508888, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447365914147508888, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447365914147508888, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.contactDistance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602091448602453642, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_XMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602091448602453642, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_YMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602091448602453642, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ZMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602091448602453642, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_MassScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602091448602453642, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602091448602453642, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602091448602453642, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602091448602453642, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602091448602453642, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.contactDistance
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 6692432432840173113, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
       propertyPath: Bone0
       value: 
       objectReference: {fileID: 726927689}
     - target: {fileID: 6692432432840173113, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: garra
+      value: 
+      objectReference: {fileID: 1189319206}
+    - target: {fileID: 6692432432840173113, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: BoneGarra
+      value: 
+      objectReference: {fileID: 117631221}
+    - target: {fileID: 6692432432840173113, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6692432432840173113, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
       propertyPath: lineMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 53c16fb5d5c516b40a1f6a8fc34132f3, type: 2}
+    - target: {fileID: 6692432432840173113, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: distanciaCordas
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872325493760430063, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_XMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872325493760430063, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_YMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872325493760430063, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ZMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872325493760430063, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_MassScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872325493760430063, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872325493760430063, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872325493760430063, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872325493760430063, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872325493760430063, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.contactDistance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206282746245611008, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7476866526661840826, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7624418778989045892, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826411114053955597, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_XMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826411114053955597, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_YMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826411114053955597, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ZMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826411114053955597, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_MassScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826411114053955597, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_SwapBodies
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826411114053955597, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826411114053955597, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionAngle
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826411114053955597, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826411114053955597, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionDistance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826411114053955597, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.bounciness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826411114053955597, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826411114053955597, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826411114053955597, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.contactDistance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845632741535355720, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941739551388941909, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_XMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941739551388941909, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_YMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941739551388941909, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ZMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941739551388941909, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_MassScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941739551388941909, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941739551388941909, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941739551388941909, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941739551388941909, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941739551388941909, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.contactDistance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8105490825027643896, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8111153560225344936, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201547186812783455, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_XMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201547186812783455, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_YMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201547186812783455, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ZMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201547186812783455, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_MassScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201547186812783455, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201547186812783455, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201547186812783455, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201547186812783455, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201547186812783455, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.contactDistance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368812915856566886, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_XMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368812915856566886, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_YMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368812915856566886, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ZMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368812915856566886, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_MassScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368812915856566886, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368812915856566886, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368812915856566886, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368812915856566886, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368812915856566886, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.contactDistance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8755315659033146266, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822707776902700346, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_XMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822707776902700346, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_YMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822707776902700346, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ZMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822707776902700346, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_MassScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822707776902700346, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822707776902700346, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822707776902700346, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822707776902700346, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822707776902700346, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.contactDistance
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935629474654622432, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144416402380266823, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_XMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144416402380266823, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_YMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144416402380266823, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ZMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144416402380266823, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_MassScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144416402380266823, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_ProjectionMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144416402380266823, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144416402380266823, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144416402380266823, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144416402380266823, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      propertyPath: m_LinearLimit.contactDistance
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7183379289771322750, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1179549442}
   m_SourcePrefab: {fileID: 100100000, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+--- !u!1 &1179549436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7183379289771322750, guid: b3fada147bd623a41b06b71299b956bf, type: 3}
+  m_PrefabInstance: {fileID: 966985246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1179549442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179549436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_AutoFindParentInteractableInHierarchy: 0
+  m_ParentInteractableObject: {fileID: 0}
+  m_AttachTransform: {fileID: 0}
+  m_SecondaryAttachTransform: {fileID: 0}
+  m_UseDynamicAttach: 0
+  m_MatchAttachPosition: 1
+  m_MatchAttachRotation: 1
+  m_SnapToColliderVolume: 1
+  m_ReinitializeDynamicAttachEverySingleGrab: 1
+  m_AttachEaseInTime: 0.15
+  m_MovementType: 0
+  m_PredictedVisualsTransform: {fileID: 0}
+  m_VelocityDamping: 1
+  m_VelocityScale: 1
+  m_AngularVelocityDamping: 1
+  m_AngularVelocityScale: 1
+  m_TrackPosition: 1
+  m_SmoothPosition: 0
+  m_SmoothPositionAmount: 8
+  m_TightenPosition: 0.1
+  m_TrackRotation: 1
+  m_SmoothRotation: 0
+  m_SmoothRotationAmount: 8
+  m_TightenRotation: 0.1
+  m_TrackScale: 1
+  m_SmoothScale: 0
+  m_SmoothScaleAmount: 8
+  m_TightenScale: 0.1
+  m_ThrowOnDetach: 1
+  m_ThrowSmoothingDuration: 0.25
+  m_ThrowSmoothingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_ThrowVelocityScale: 1.5
+  m_ThrowAngularVelocityScale: 1
+  m_ForceGravityOnDetach: 0
+  m_RetainTransformParent: 1
+  m_StartingSingleGrabTransformers: []
+  m_StartingMultipleGrabTransformers: []
+  m_AddDefaultGrabTransformers: 1
+  m_FarAttachMode: 0
+  m_LimitLinearVelocity: 0
+  m_LimitAngularVelocity: 0
+  m_MaxLinearVelocityDelta: 10
+  m_MaxAngularVelocityDelta: 20
 --- !u!1001 &1189319204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -417,15 +1324,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3866526481000604174, guid: ca64d778a8a671046a313663dd566f97, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.734
+      value: 10.02021
       objectReference: {fileID: 0}
     - target: {fileID: 3866526481000604174, guid: ca64d778a8a671046a313663dd566f97, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.690002
+      value: 3.6549997
       objectReference: {fileID: 0}
     - target: {fileID: 3866526481000604174, guid: ca64d778a8a671046a313663dd566f97, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.026436
+      value: 15.76662
       objectReference: {fileID: 0}
     - target: {fileID: 3866526481000604174, guid: ca64d778a8a671046a313663dd566f97, type: 3}
       propertyPath: m_LocalRotation.w
@@ -433,11 +1340,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3866526481000604174, guid: ca64d778a8a671046a313663dd566f97, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3866526481000604174, guid: ca64d778a8a671046a313663dd566f97, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3866526481000604174, guid: ca64d778a8a671046a313663dd566f97, type: 3}
       propertyPath: m_LocalRotation.z
@@ -463,6 +1370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Garra_No_Rope
       objectReference: {fileID: 0}
+    - target: {fileID: 7584744121853676334, guid: ca64d778a8a671046a313663dd566f97, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -471,6 +1382,11 @@ PrefabInstance:
 --- !u!54 &1189319205 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 4355641203694124867, guid: ca64d778a8a671046a313663dd566f97, type: 3}
+  m_PrefabInstance: {fileID: 1189319204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1189319206 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3866526481000604174, guid: ca64d778a8a671046a313663dd566f97, type: 3}
   m_PrefabInstance: {fileID: 1189319204}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1297797997
@@ -897,7 +1813,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6112559645747699400, guid: 4ea711befd549324095e934d72d6aa65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.42
+      value: -1.4200001
       objectReference: {fileID: 0}
     - target: {fileID: 6112559645747699400, guid: 4ea711befd549324095e934d72d6aa65, type: 3}
       propertyPath: m_LocalPosition.y
@@ -935,6 +1851,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6684278210371589690, guid: 4ea711befd549324095e934d72d6aa65, type: 3}
+      propertyPath: Bone0
+      value: 
+      objectReference: {fileID: 119776114}
     - target: {fileID: 7924760512651416632, guid: 4ea711befd549324095e934d72d6aa65, type: 3}
       propertyPath: m_ConnectedBody
       value: 
@@ -962,9 +1882,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 1605118058}
   - {fileID: 2138465242}
-  - {fileID: 1189319204}
   - {fileID: 572342025}
-  - {fileID: 865307745}
   - {fileID: 5439900692548003002}
   - {fileID: 1377024419}
+  - {fileID: 1189319204}
+  - {fileID: 865307745}
   - {fileID: 1689731100}
