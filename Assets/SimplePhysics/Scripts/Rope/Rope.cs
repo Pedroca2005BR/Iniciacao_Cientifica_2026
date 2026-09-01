@@ -32,8 +32,8 @@ public class Rope : MonoBehaviour
         lr.useWorldSpace = true;
         lr.positionCount = points.Count;
         lr.material = lineMaterial;
-        lr.startWidth = 0.189f;
-        lr.endWidth = 0.189f;
+        lr.startWidth = 0.02f;
+        lr.endWidth = 0.02f;
         lr.generateLightingData = true;
     }
 

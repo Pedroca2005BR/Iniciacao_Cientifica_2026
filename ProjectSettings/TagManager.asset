@@ -28,6 +28,10 @@ TagManager:
   - QDSUIToggleCheckboxRadio
   - QDSUIToggleThumbnail
   - SamplesInfoPanel
+  - Handle
+  - Bouncable
+  - Target
+  - Grabbable
   layers:
   - Default
   - TransparentFX
