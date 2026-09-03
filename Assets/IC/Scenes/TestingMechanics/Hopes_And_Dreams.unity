@@ -8241,18 +8241,18 @@ MonoBehaviour:
   _scoringModifier:
     _positionRotationWeight: 0.8
   _slippiness: 0
-  _supportedGrabTypes: 1
+  _supportedGrabTypes: -1
   _pinchGrabRules:
     _thumbRequirement: 1
     _indexRequirement: 1
     _middleRequirement: 1
-    _ringRequirement: 0
-    _pinkyRequirement: 0
+    _ringRequirement: 1
+    _pinkyRequirement: 1
     _unselectMode: 0
   _palmGrabRules:
     _thumbRequirement: 1
     _indexRequirement: 1
-    _middleRequirement: 1
+    _middleRequirement: 2
     _ringRequirement: 1
     _pinkyRequirement: 1
     _unselectMode: 0
@@ -34963,18 +34963,18 @@ MonoBehaviour:
   _scoringModifier:
     _positionRotationWeight: 0.8
   _slippiness: 0
-  _supportedGrabTypes: 1
+  _supportedGrabTypes: -1
   _pinchGrabRules:
     _thumbRequirement: 1
     _indexRequirement: 1
     _middleRequirement: 1
-    _ringRequirement: 0
-    _pinkyRequirement: 0
+    _ringRequirement: 1
+    _pinkyRequirement: 1
     _unselectMode: 0
   _palmGrabRules:
     _thumbRequirement: 1
     _indexRequirement: 1
-    _middleRequirement: 1
+    _middleRequirement: 2
     _ringRequirement: 1
     _pinkyRequirement: 1
     _unselectMode: 0
