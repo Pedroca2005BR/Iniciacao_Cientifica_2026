@@ -972,10 +972,10 @@ ConfigurableJoint:
   m_AngularYMotion: 0
   m_AngularZMotion: 0
   m_LinearLimitSpring:
-    spring: 0
-    damper: 0
+    spring: 500
+    damper: 50
   m_LinearLimit:
-    limit: 0.08
+    limit: 0.5
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -1004,21 +1004,21 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 4
-    positionSpring: 200
-    positionDamper: 50
-    maximumForce: 200
+    positionSpring: 60
+    positionDamper: 6
+    maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_YDrive:
     serializedVersion: 4
-    positionSpring: 200
-    positionDamper: 50
-    maximumForce: 200
+    positionSpring: 60
+    positionDamper: 6
+    maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_ZDrive:
     serializedVersion: 4
-    positionSpring: 200
-    positionDamper: 50
-    maximumForce: 200
+    positionSpring: 60
+    positionDamper: 6
+    maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
@@ -1060,7 +1060,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397697560}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 0.08
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1366,7 +1366,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 560107946}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 0.1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1407,10 +1407,10 @@ ConfigurableJoint:
   m_AngularYMotion: 0
   m_AngularZMotion: 0
   m_LinearLimitSpring:
-    spring: 0
-    damper: 0
+    spring: 500
+    damper: 50
   m_LinearLimit:
-    limit: 0.08
+    limit: 0.5
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -1439,21 +1439,21 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 4
-    positionSpring: 200
-    positionDamper: 50
-    maximumForce: 200
+    positionSpring: 90
+    positionDamper: 9
+    maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_YDrive:
     serializedVersion: 4
-    positionSpring: 200
-    positionDamper: 50
-    maximumForce: 200
+    positionSpring: 90
+    positionDamper: 9
+    maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_ZDrive:
     serializedVersion: 4
-    positionSpring: 200
-    positionDamper: 50
-    maximumForce: 200
+    positionSpring: 90
+    positionDamper: 9
+    maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
@@ -1980,7 +1980,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678476171}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 0.12
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2021,10 +2021,10 @@ ConfigurableJoint:
   m_AngularYMotion: 0
   m_AngularZMotion: 0
   m_LinearLimitSpring:
-    spring: 0
-    damper: 0
+    spring: 500
+    damper: 50
   m_LinearLimit:
-    limit: 0.08
+    limit: 0.5
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -2053,21 +2053,21 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 4
-    positionSpring: 200
-    positionDamper: 50
-    maximumForce: 200
+    positionSpring: 120
+    positionDamper: 12
+    maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_YDrive:
     serializedVersion: 4
-    positionSpring: 200
-    positionDamper: 50
-    maximumForce: 200
+    positionSpring: 120
+    positionDamper: 12
+    maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_ZDrive:
     serializedVersion: 4
-    positionSpring: 200
-    positionDamper: 50
-    maximumForce: 200
+    positionSpring: 120
+    positionDamper: 12
+    maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
@@ -2283,7 +2283,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754470536}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 0.15
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2324,10 +2324,10 @@ ConfigurableJoint:
   m_AngularYMotion: 0
   m_AngularZMotion: 0
   m_LinearLimitSpring:
-    spring: 0
-    damper: 0
+    spring: 500
+    damper: 50
   m_LinearLimit:
-    limit: 0.08
+    limit: 0.5
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -2356,21 +2356,21 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 4
-    positionSpring: 200
-    positionDamper: 50
-    maximumForce: 200
+    positionSpring: 150
+    positionDamper: 15
+    maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_YDrive:
     serializedVersion: 4
-    positionSpring: 200
-    positionDamper: 50
-    maximumForce: 200
+    positionSpring: 150
+    positionDamper: 15
+    maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_ZDrive:
     serializedVersion: 4
-    positionSpring: 200
-    positionDamper: 50
-    maximumForce: 200
+    positionSpring: 150
+    positionDamper: 15
+    maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
