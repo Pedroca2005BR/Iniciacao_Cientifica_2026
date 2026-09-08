@@ -15,6 +15,7 @@ public class Rope : MonoBehaviour
     [Header("Bones & Rope")]
     public Rigidbody BoneGarra;
     private LineRenderer lr;
+    private Vector3 bone0Padrao;
     private int primeira = 0;
 
     public void Init(List<Transform> pts, Material lineMaterial)
@@ -35,6 +36,7 @@ public class Rope : MonoBehaviour
         lr.startWidth = 0.02f;
         lr.endWidth = 0.02f;
         lr.generateLightingData = true;
+        bone0Padrao = points[0].transform.localPosition;
     }
 
     void LateUpdate()
@@ -51,15 +53,14 @@ public class Rope : MonoBehaviour
         //{
             for (int i = 0; i < points.Count; i++)
             {
-                if (i == 0) lr.SetPosition(0, points[1].position);
-                else lr.SetPosition(i, points[i].position);
+                lr.SetPosition(i, points[i].position);
             }
         //}
     }
 
     private void Update()
     {
-        points[0].localPosition = new Vector3(0f, 0f, 0f);
+        points[0].localPosition = bone0Padrao;
     }
 
     bool verifyBonesDistance()
